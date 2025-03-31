@@ -1,8 +1,5 @@
-
-![image alt](https://github.com/aditya12-g/static-website-hosting-s3/blob/main/Screenshot%20(23).png)
 📌 Static Website Hosting on AWS S3
-
-  
+![image alt](https://github.com/aditya12-g/static-website-hosting-s3/blob/main/Screenshot%20(23).png)
 
 🚀 A fully automated Terraform-based setup for hosting a static website on AWS S3 with public access enabled via a bucket policy.
 
@@ -22,6 +19,7 @@ This project provisions an S3 bucket with static website hosting enabled and upl
 
 💽 Folder Structure
 
+
 static-website-hosting-s3/
 │── main.tf                  # Terraform configuration for AWS S3 bucket
 │── variables.tf              # Terraform variables for customization
@@ -30,6 +28,7 @@ static-website-hosting-s3/
 │── error.html                # Custom error page
 │── terraform.tfstate         # Terraform state file (not included in repo)
 └── README.md                 # Project documentation
+
 
 🛠️ Prerequisites
 
