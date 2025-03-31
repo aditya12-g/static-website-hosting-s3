@@ -1,25 +1,30 @@
-📌 Static Website Hosting on AWS S3
+# 📌 Static Website Hosting on AWS S3
+
 ![image alt](https://github.com/aditya12-g/static-website-hosting-s3/blob/main/Screenshot%20(23).png)
 
-🚀 A fully automated Terraform-based setup for hosting a static website on AWS S3 with public access enabled via a bucket policy.
 
-📸 Project Overview
+![AWS S3 Hosting](https://img.shields.io/badge/AWS-S3-orange?logo=amazonaws&style=flat) ![Terraform](https://img.shields.io/badge/IaC-Terraform-purple?logo=terraform&style=flat) ![CI/CD](https://img.shields.io/badge/Automation-100%25-green?style=flat)
 
-This project provisions an S3 bucket with static website hosting enabled and uploads an index.html and error.html page. The bucket policy is configured to allow public access to the hosted website.
+🚀 **A fully automated Terraform-based setup for hosting a static website on AWS S3 with public access enabled via a bucket policy.**
 
-📌 Key Features:
+---
 
-✅ Static Website Hosting on AWS S3
+## 📸 Project Overview
 
-✅ Infrastructure as Code using Terraform
+This project provisions an **S3 bucket** with static website hosting enabled and uploads an `index.html` and `error.html` page. The bucket policy is configured to allow public access to the hosted website.
 
-✅ Public Access Configuration via Bucket Policy
+### 📌 Key Features:
 
-✅ Custom Error Page Handling
+- ✅ Static Website Hosting on **AWS S3**
+- ✅ Infrastructure as Code using **Terraform**
+- ✅ Public Access Configuration via **Bucket Policy**
+- ✅ Custom Error Page Handling
 
-💽 Folder Structure
+---
 
+## 📂 Folder Structure
 
+```plaintext
 static-website-hosting-s3/
 │── main.tf                  # Terraform configuration for AWS S3 bucket
 │── variables.tf              # Terraform variables for customization
@@ -28,43 +33,51 @@ static-website-hosting-s3/
 │── error.html                # Custom error page
 │── terraform.tfstate         # Terraform state file (not included in repo)
 └── README.md                 # Project documentation
+```
 
+---
 
-🛠️ Prerequisites
+## 🛠 Prerequisites
 
 Before deploying, ensure you have:
 
-AWS CLI installed and configured (aws configure)
+- **AWS CLI** installed and configured (`aws configure`)
+- **Terraform** installed (`terraform -v`)
 
-Terraform installed (terraform -v)
+---
 
-🚀 Deployment Steps
+## 🚀 Deployment Steps
 
-1. Clone the Repository
-
+### 1️⃣ Clone the Repository
+```sh
 git clone https://github.com/aditya12-g/static-website-hosting-s3.git
 cd static-website-hosting-s3
+```
 
-2. Initialize Terraform
-
+### 2️⃣ Initialize Terraform
+```sh
 terraform init
+```
 
-3. Validate Configuration
-
+### 3️⃣ Validate Configuration
+```sh
 terraform validate
+```
 
-4. Deploy to AWS
-
+### 4️⃣ Deploy to AWS
+```sh
 terraform apply -auto-approve
+```
 
-5. Get the Website URL
+### 5️⃣ Get the Website URL
+After deployment, Terraform will output the **S3 Website Endpoint**. Open it in a browser to view your site.
 
-After deployment, Terraform will output the S3 Website Endpoint. Open it in a browser to view your site.
+---
 
-📝 Terraform Configuration
+## 📝 Terraform Configuration
 
-S3 Bucket Configuration
-
+### S3 Bucket Configuration
+```hcl
 resource "aws_s3_bucket" "mybucket" {
   bucket = var.bucketname
 }
@@ -78,9 +91,10 @@ resource "aws_s3_bucket_website_configuration" "website" {
     key = "error.html"
   }
 }
+```
 
-Bucket Policy (Public Access)
-
+### Bucket Policy (Public Access)
+```hcl
 resource "aws_s3_bucket_policy" "public_read" {
   bucket = aws_s3_bucket.mybucket.id
   policy = jsonencode({
@@ -96,20 +110,49 @@ resource "aws_s3_bucket_policy" "public_read" {
     ]
   })
 }
+```
 
-📌 Outputs
+---
+
+## 📌 Outputs
 
 After applying Terraform, you will get:
 
-✅ Website URL – http://<your-bucket-name>.s3-website-<region>.amazonaws.com/
+- ✅ **Website URL** – `http://<your-bucket-name>.s3-website-<region>.amazonaws.com/`
 
-📢 Contributing
+---
 
-Feel free to fork this repository, improve it, and submit a pull request! Contributions are always welcome. 😊
+## 📢 Contributing
 
-📚 License
+Feel free to **fork** this repository, improve it, and submit a **pull request**! Contributions are always welcome. 😊
 
-This project is open-source and available under the MIT License.
+---
+
+## 📜 License
+
+This project is **open-source** and available under the **MIT License**.
+
+---
+
+### 🚀 Connect with Me
+
+[![GitHub](https://img.shields.io/badge/GitHub-aditya12--g-black?logo=github)](https://github.com/aditya12-g)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Aditya-blue?logo=linkedin)](https://www.linkedin.com/in/aditya/)  
+
+---
+
+### 🎯 **Now, add this to your repo!**
+
+Save this as `README.md` in your repository and push it:
+```sh
+git add README.md
+git commit -m "Added README for Static Website Hosting on S3"
+git push origin main
+```
+
+🚀 **Your project now has a professional README!** Let me know if you need any modifications. 😃
+
+
 
 
 
