@@ -141,16 +141,7 @@ This project is **open-source** and available under the **MIT License**.
 
 ---
 
-### 🎯 **Now, add this to your repo!**
 
-Save this as `README.md` in your repository and push it:
-```sh
-git add README.md
-git commit -m "Added README for Static Website Hosting on S3"
-git push origin main
-```
-
-🚀 **Your project now has a professional README!** Let me know if you need any modifications. 😃
 
 
 
